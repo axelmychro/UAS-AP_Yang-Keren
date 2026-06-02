@@ -1,3 +1,7 @@
+#include "lib_tebak_kata.h"
+using namespace std;
+
 int main()
 {
+		return 0;
 }
