@@ -3,7 +3,7 @@
 using namespace std;
 
 struct KataGame {
-		string kata_asli[15];
+		vector<string> kata_asli;
 		vector<int> status_tebakan;
 		int sisa_nyawa;
 		char tebakan_salah[26];
