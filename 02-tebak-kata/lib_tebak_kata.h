@@ -7,9 +7,9 @@ using namespace std;
 struct KataGame {
 		vector<string> kata_asli;
 		vector<int> status_tebakan;
-		int sisa_nyawa;
+		int sisa_nyawa = 0;
 		char tebakan_salah[26];
-		int jumlah_salah;
+		int jumlah_salah = 0;
 
 		string pilihKataAcak()
 		{
