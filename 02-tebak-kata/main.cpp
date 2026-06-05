@@ -62,9 +62,25 @@ int main()
 
 		log("Jumlah karakter: " + to_string(kata_rahasia.size()));
 		log("Sisa nyawa     : " + to_string(game.sisa_nyawa));
-		for (int i = 0; i < kata_rahasia.size(); ++i)
-				cout << "_";
-		cout << endl;
+
+		for (int i = 0; i < kata_rahasia.size(); ++i) {
+				log("for debug: " + kata_rahasia);
+
+				cout << "Kata: ";
+				for (int j = 0; j < kata_rahasia.size(); ++j) {
+						if (game.status_tebakan[j] == 1)
+								cout << kata_rahasia[j];
+						else
+								cout << "_";
+				}
+				cout << endl;
+
+				while (game.status_tebakan[i] == 0) {
+						if (tebak("tebak huruf ke-" + to_string(i)) ==
+							kata_rahasia[i])
+								game.status_tebakan[i] = 1;
+				}
+		}
 
 		return 0;
 }
