@@ -34,6 +34,10 @@ int main()
 		//cout << time(0) << endl;
 		string kata_rahasia = game.pilihKataAcak();
 
+		// jika belum direset, akan segfault
+		for (int i = 0; i < kata_rahasia.size(); ++i)
+				game.status_tebakan.push_back(0);
+
 		/*
 	     * Memilih tingkat kesulitan
 	     */
