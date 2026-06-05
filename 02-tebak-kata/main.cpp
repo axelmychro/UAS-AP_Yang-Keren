@@ -35,7 +35,7 @@ int main()
 		log("2. Sedang (6 nyawa)");
 		log("3. Sulit  (4 nyawa)");
 
-		switch (input("pilihan=")) {
+		switch (input("pilihan")) {
 		default:
 				log("Pilihan tidak tersedia, kesulitan mudah terpilih");
 		case 1:
