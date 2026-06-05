@@ -27,6 +27,30 @@ int main()
 		//cout << time(0) << endl;
 		string kata_rahasia = game.pilihKataAcak();
 
+		/*
+	     * Memilih tingkat kesulitan
+	     */
+		log("Tingkat kesulitan: ");
+		log("1. Mudah  (8 nyawa, default)");
+		log("2. Sedang (6 nyawa)");
+		log("3. Sulit  (4 nyawa)");
+
+		switch (input("pilihan=")) {
+		default:
+				log("Pilihan tidak tersedia, kesulitan mudah terpilih");
+		case 1:
+				game.sisa_nyawa = 8;
+				break;
+		case 2:
+				game.sisa_nyawa = 6;
+				break;
+		case 3:
+				game.sisa_nyawa = 4;
+				break;
+		};
+
+		log("Jumlah karakter: " + to_string(kata_rahasia.size()));
+		log("Sisa nyawa     : " + to_string(game.sisa_nyawa));
 		for (int i = 0; i < kata_rahasia.size(); ++i)
 				cout << "_";
 		cout << endl;
