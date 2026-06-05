@@ -52,13 +52,12 @@ private:
 
     void floodFill(int r, int c) {
         if (r < 0 || r >= size || c < 0 || c >= size) return;
-        if (viewBoard[r][c] != '#') return; // Berhenti jika sudah terbuka atau ditandai
+        if (viewBoard[r][c] != '#') return; 
 
         viewBoard[r][c] = '0' + logicBoard[r][c];
 
-        if (logicBoard[r][c] > 0) return; // Berhenti di batas angka > 0
+        if (logicBoard[r][c] > 0) return; 
 
-        // Lanjutkan ke 8 arah jika angka 0
         for (int dr = -1; dr <= 1; dr++) {
             for (int dc = -1; dc <= 1; dc++) {
                 if (dr != 0 || dc != 0) {
@@ -121,7 +120,6 @@ public:
         }
     }
 
-    // Aksi membuka kotak
     void openCell(int r, int c) {
         if (viewBoard[r][c] == 'F') {
             cout << "Kotak ini ditandai bendera (F). Hapus tanda dulu jika ingin membuka!\n";
@@ -129,13 +127,11 @@ public:
         }
         if (viewBoard[r][c] != '#') return;
 
-        // Kena bom
         if (logicBoard[r][c] == -1) {
             isGameOver = true;
             return;
         }
 
-        // Angka > 0
         if (logicBoard[r][c] > 0) {
             viewBoard[r][c] = '0' + logicBoard[r][c];
             return;
