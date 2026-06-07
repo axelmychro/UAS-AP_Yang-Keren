@@ -21,7 +21,7 @@ struct Petugas {
 };
 
 const int KAPASITAS_MAKS = 20;
-vector<Kendaraan*> daftarParkir; // menggunakan pointer
+vector<Kendaraan*> daftarParkir; 
 Petugas petugas;
 
 void cetakGaris(char c = '=', int panjang = 80) {
@@ -99,7 +99,7 @@ void tambahKendaraan() {
 
     if ((int)daftarParkir.size() + jumlah > KAPASITAS_MAKS) {
         cout << "Maaf, parkiran hanya dapat memuat " << KAPASITAS_MAKS << " mobil." << endl;
-        // Hitung berapa yang masih bisa masuk
+
         int sisaSlot = KAPASITAS_MAKS - (int)daftarParkir.size();
         if (sisaSlot <= 0) {
             cout << "Parkiran sudah penuh!" << endl;
@@ -165,7 +165,7 @@ void pembayaran() {
 
     int index = -1;
     for (int i = 0; i < (int)daftarParkir.size(); i++) {
-        // Case-insensitive search
+   
         string platDB = daftarParkir[i]->platMobil;
         string platInput = platCari;
         transform(platDB.begin(), platDB.end(), platDB.begin(), ::toupper);
@@ -202,10 +202,10 @@ void pembayaran() {
         }
     }
 
-    // Hitung biaya
+ 
     Kendaraan* k = daftarParkir[index];
     long long durasiDetik = getDurasiDetik(k->waktuMasuk);
-    // Tarif: Rp 2000 per menit, minimal 1 menit
+   
     long long menitParkir = max(1LL, durasiDetik / 60);
     long long biaya = menitParkir * 2000;
 
