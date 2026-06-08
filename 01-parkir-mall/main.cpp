@@ -157,7 +157,6 @@ void pembayaran() {
     string platCari;
     cout << endl;
     cout << "Masukkan plat mobil yang ingin dibayar : ";
-    cin.ignore();
     getline(cin, platCari);
 
 
